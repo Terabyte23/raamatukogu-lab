@@ -1,18 +1,32 @@
 # Raamatukogu
 
-<!-- TODO: Kirjelda mis see rakendus on (2-3 lauset) -->
+Raamatukogu on veebirakendus, mis võimaldab hallata raamatuid, kasutajaid ja laenutusi.
+Kasutaja saab otsida raamatuid, vaadata nende infot, laenutada ja tagastada raamatuid ning vaadata statistikat.
 
 ## Tehnoloogiad
 
-<!-- TODO: Lisa kasutatavad tehnoloogiad -->
+* Node.js
+* Express.js
+* JWT autentimine
 
 ## Käivitamine
 
-<!-- TODO: Lisa käivitamise juhised -->
+```bash
+npm install
+```
+```bash
+node src/app.js
+```
+
+Server töötab aadressil:
+```bash
+http://localhost:3000
+```
 
 ## Testikasutajad
 
-<!-- TODO: Lisa testikasutajate andmed -->
+username: admin
+password: admin
 
 ## API endpointid
 
@@ -20,34 +34,38 @@
 
 | Meetod | URL | Kirjeldus |
 |--------|-----|-----------|
-| POST | /api/users/signup | <!-- TODO --> |
-| POST | /api/users/login | <!-- TODO --> |
-| POST | /api/users/logout | <!-- TODO --> |
-| GET | /api/users/me | <!-- TODO --> |
+| POST | /api/users/signup | kasutaja registreerimine |
+| POST | /api/users/login | sisselogimine |
+| POST | /api/users/logout | väljalogimine |
+| GET | /api/users/me | praegune kasutaja |
 
 ### Raamatud
 
 | Meetod | URL | Kirjeldus |
 |--------|-----|-----------|
-| GET | /api/books | <!-- TODO --> |
-| GET | /api/books/:id | <!-- TODO --> |
-| GET | /api/books/search | <!-- TODO --> |
-| GET | /api/books/genres | <!-- TODO --> |
-| GET | /api/books/genre/:genre | <!-- TODO --> |
+| GET | /api/books | kõik raamatud |
+| GET | /api/books/:id | üks raamat |
+| GET | /api/books/search | otsing autori või pealkirja järgi |
+| GET | /api/books/genres | žanrid |
+| GET | /api/books/genre/:genre | raamatud žanri järgi |
 
 ### Laenud
 
 | Meetod | URL | Kirjeldus |
 |--------|-----|-----------|
-| POST | /api/loans | <!-- TODO --> |
-| POST | /api/loans/:id/return | <!-- TODO --> |
-| GET | /api/loans | <!-- TODO --> |
-| GET | /api/loans/me | <!-- TODO --> |
+| POST | /api/loans | raamatu laenutamine |
+| POST | /api/loans/:id/return | raamatu tagastamine |
+| GET | /api/loans | kõik laenud |
+| GET | /api/loans/me | kasutaja laenud |
 
 ## Testid
+``` bash
+node src/test.js
+```
 
-<!-- TODO: Kirjelda kuidas teste käivitada -->
+Kõik testid peavad läbima edukalt.
 
 ## GitHub Actions
 
-<!-- TODO: Kirjelda mis toimub automaatselt -->
+Projekt kasutab GitHub Actions automaattestide käivitamiseks.
+Testid käivitatakse iga pushi ja pull requesti korral.
